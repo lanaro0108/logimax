@@ -1,0 +1,40 @@
+// Variáveis de identidade visual LogiMax
+$cor-primaria: #12345a;
+$cor-primaria-dark: #0d2642;
+$cor-primaria-light: #1b4b80;
+
+$cor-destaque: #ffb020;
+$cor-destaque-hover: #e69d19;
+
+$cor-fundo: #f8fafc;
+$cor-superficie: #ffffff;
+$cor-borda: #e2e8f0;
+$cor-borda-hover: #cbd5e1;
+
+$cor-texto-principal: #17212f;
+$cor-texto-secundario: #64748b;
+$cor-texto-mutado: #94a3b8;
+
+// Status e feedbacks
+$cor-sucesso: #10b981;
+$cor-sucesso-fundo: #ecfdf5;
+$cor-aviso: #f59e0b;
+$cor-aviso-fundo: #fffbeb;
+$cor-perigo: #ef4444;
+$cor-perigo-fundo: #fef2f2;
+$cor-info: #3b82f6;
+$cor-info-fundo: #eff6ff;
+
+// Tipografia e elevação
+$fonte-padrao: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$raio-sm: 6px;
+$raio-md: 10px;
+$raio-lg: 16px;
+
+$sombra-sm: 0 1px 3px rgba(18, 52, 90, 0.06);
+$sombra-md: 0 4px 6px -1px rgba(18, 52, 90, 0.08), 0 2px 4px -2px rgba(18, 52, 90, 0.04);
+$sombra-lg: 0 10px 15px -3px rgba(18, 52, 90, 0.1), 0 4px 6px -4px rgba(18, 52, 90, 0.05);
+
+// Breakpoints
+$tela-md: 768px;
+$tela-lg: 1024px;
