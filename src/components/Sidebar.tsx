@@ -26,11 +26,9 @@ export function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
-        <div className="logo-container">
-          {/* Logotipo oficial LogiMax */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="LogiMax Logo" />
-        </div>
+        {/* Logotipo oficial LogiMax */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo.png" alt="LogiMax Logo" />
       </div>
 
       <nav className="sidebar-nav">

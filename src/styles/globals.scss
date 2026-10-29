@@ -178,14 +178,17 @@ a {
       background: $cor-info-fundo;
       color: $cor-primaria;
     }
+
     &.accent {
       background: $cor-aviso-fundo;
       color: $cor-destaque-hover;
     }
+
     &.success {
       background: $cor-sucesso-fundo;
       color: $cor-sucesso;
     }
+
     &.danger {
       background: $cor-perigo-fundo;
       color: $cor-perigo;
@@ -335,6 +338,7 @@ a {
       border: none;
       cursor: pointer;
       color: $cor-texto-secundario;
+
       &:hover {
         color: $cor-perigo;
       }
@@ -360,6 +364,7 @@ a {
     opacity: 0;
     transform: translateY(10px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -499,9 +504,11 @@ a {
     .user-details {
       display: flex;
       flex-direction: column;
+
       .user-name {
         font-weight: 600;
       }
+
       .user-role {
         font-size: 0.75rem;
         color: $cor-texto-secundario;

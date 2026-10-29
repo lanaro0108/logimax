@@ -28,18 +28,8 @@ export default async function MotoristaLayout({
           justifyContent: 'space-between',
         }}
       >
-        <div
-          style={{
-            backgroundColor: '#ffffff',
-            padding: '4px 12px',
-            borderRadius: 6,
-            display: 'inline-flex',
-            alignItems: 'center',
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="LogiMax Logo" style={{ height: 32 }} />
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo.png" alt="LogiMax Logo" style={{ height: 38 }} />
         <Header nomeUsuario={usuario.nome} papel={usuario.role} />
       </header>
       <main className="page-body">{children}</main>

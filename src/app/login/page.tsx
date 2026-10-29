@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Lock, Mail, AlertCircle, CheckCircle } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -10,7 +10,6 @@ export default function LoginPage() {
   const [senha, setSenha] = useState('');
   const [carregando, setCarregando] = useState(false);
   const [erro, setErro] = useState('');
-  const [mensagemSeed, setMensagemSeed] = useState('');
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -39,26 +38,6 @@ export default function LoginPage() {
       router.refresh();
     } catch {
       setErro('Erro de conexão com o servidor');
-    } finally {
-      setCarregando(false);
-    }
-  }
-
-  async function handleSeed() {
-    setCarregando(true);
-    setErro('');
-    try {
-      const res = await fetch('/api/auth/seed', { method: 'POST' });
-      const data = await res.json();
-      if (res.ok) {
-        setMensagemSeed('Contas de teste criadas com sucesso!');
-        setEmail('gestor@logimax.com');
-        setSenha('senha123');
-      } else {
-        setErro(data.erro || 'Erro ao inicializar dados');
-      }
-    } catch {
-      setErro('Falha na requisição');
     } finally {
       setCarregando(false);
     }
@@ -105,27 +84,18 @@ export default function LoginPage() {
           </div>
         )}
 
-        {mensagemSeed && (
-          <div className="alert-box success">
-            <CheckCircle size={18} />
-            <span>{mensagemSeed}</span>
-          </div>
-        )}
-
         <form onSubmit={handleLogin}>
           <div className="form-group">
             <label htmlFor="input-email">E-mail</label>
-            <div style={{ position: 'relative' }}>
-              <input
-                id="input-email"
-                type="email"
-                required
-                placeholder="seu.email@logimax.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                style={{ width: '100%' }}
-              />
-            </div>
+            <input
+              id="input-email"
+              type="email"
+              required
+              placeholder="seu.email@logimax.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              style={{ width: '100%' }}
+            />
           </div>
 
           <div className="form-group">
@@ -150,52 +120,6 @@ export default function LoginPage() {
             {carregando ? 'Autenticando...' : 'Entrar na Plataforma'}
           </button>
         </form>
-
-        <div
-          style={{
-            marginTop: 24,
-            paddingTop: 20,
-            borderTop: '1px solid #E2E8F0',
-            fontSize: '0.8125rem',
-            color: '#64748B',
-          }}
-        >
-          <div style={{ marginBottom: 12 }}>
-            <strong>Ambiente SENAI — Credenciais Rápidas:</strong>
-            <div style={{ marginTop: 6, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-              <button
-                type="button"
-                className="btn-secondary btn-sm"
-                onClick={() => {
-                  setEmail('gestor@logimax.com');
-                  setSenha('senha123');
-                }}
-              >
-                Preencher Gestor
-              </button>
-              <button
-                type="button"
-                className="btn-secondary btn-sm"
-                onClick={() => {
-                  setEmail('carlos@logimax.com');
-                  setSenha('senha123');
-                }}
-              >
-                Preencher Motorista
-              </button>
-            </div>
-          </div>
-
-          <button
-            type="button"
-            onClick={handleSeed}
-            className="btn-secondary btn-sm"
-            style={{ width: '100%', justifyContent: 'center' }}
-            disabled={carregando}
-          >
-            Resetar / Inicializar Dados de Teste
-          </button>
-        </div>
       </div>
     </div>
   );
